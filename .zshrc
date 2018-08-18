@@ -2,13 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/luis/.oh-my-zsh
+  export ZSH=/home/luis/.oh-my-zsh
 
+precmd() { pwd > /tmp/whereami}
+export PROMPT_COMMAND="pwd > /tmp/whereami"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-
+ZSH_THEME="agnoster"
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -60,6 +61,13 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  adb
+  archlinux
+  go
+  ng
+  pip
+  rust
+  tmux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -67,7 +75,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-
+#export PATH="/home/luis/anaconda3/bin:$PATH"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -92,4 +100,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias config='/usr/bin/git --git-dir=/Users/luis/.cfg/ --work-tree=/Users/luis'
+alias config='/usr/bin/git --git-dir=/home/luis/.cfg/ --work-tree=/home/luis'
