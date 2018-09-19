@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/luis/.oh-my-zsh
+  export ZSH=~/.oh-my-zsh
 
 precmd() { pwd > /tmp/whereami}
 export PROMPT_COMMAND="pwd > /tmp/whereami"
@@ -100,4 +100,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias config='/usr/bin/git --git-dir=/home/luis/.cfg/ --work-tree=/home/luis'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
