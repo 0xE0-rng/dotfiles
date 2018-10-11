@@ -14,9 +14,12 @@ set mouse=a
 filetype plugin indent on
 set tabstop=2 shiftwidth=2 expandtab
 
-if has("autocmd") 
+"retab on save
+if has("autocmd")
   au BufReadPost * if &modifiable | retab | endif
 endif
+" remove trailing whitespaces on save
+autocmd BufWritePre * :%s/\s\+$//e
 
 "plugins
 call plug#begin('~/.vim/plugged')
