@@ -1,0 +1,100 @@
+mnemonic
+
+## vim
+### Navigation
+10G      jump to line 10
+1j        move 1 down
+w         next word
+e         end of word 
+b         start of word
+
+
+mx        set mark x
+'x        jump to x
+'.        last changed line
+''        undo jump
+
+H          top of screen
+M          mid of screen
+L          bottom of screen
+
+
+<C-O>     Enter command mode for one command
+<C-U>     remove left 
+
+ma | set mark a
+'a | jmp to mark a
+
+# Modification
+x          delete char
+r          replace char
+
+O          insert line and insert
+cc,S       delete line
+A          append at end of line 
+
+
+### Explore
+I - change dispaly mode
+i - remove top
+R |
+
+### Plugins
+gcc | comment out line
+## linux
+xkill
+xrandr
+setxkbmap
+iwlist [interface] scan
+fdisk -l
+
+
+pactl set-card-profile 0 output:analog-stereo
+pactl set-sink-mute 0 1
+
+## ranger
+S - open shell
+s - execute command
+E - edit
+F7 - mkdir
+gnN - newTab
+
+## Emacs
+C-X C-Q | read only toggle
+
+
+C-X C-W   | Write as new file
+
+
+Mod - M   | go though minibuffer
+Mod - N   | current option
+
+
+## tmux
+tmux a -t 0
+
+
+
+
+## docker
+detatch from image | C-p C-q
+
+
+
+## adb
+
+adb devices
+adb -s emulator-xxxx shell
+run-as <your-package-name> 
+cd data/data/<your-package-name>/databases/
+sqlite3 <your-db-name>.db
+
+
+## sqlite
+.tables
+.schema tablename
+.help
+
+
+
+
