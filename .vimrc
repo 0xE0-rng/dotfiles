@@ -5,12 +5,11 @@ set list listchars=tab:\ \ ,trail:· " display tabs and trailing spaces
 "searching
 set hlsearch
 set smartcase
-
+nnoremap <silent> \ :noh<return>
 "line numbers
 set nu
-set relativenumber
+"set relativenumber
 set mouse=a
-"only search case sensetive if capital letter
 filetype plugin indent on
 set tabstop=2 shiftwidth=2 expandtab
 
@@ -20,6 +19,29 @@ if has("autocmd")
 endif
 " remove trailing whitespaces on save
 autocmd BufWritePre * :%s/\s\+$//e
+
+
+
+"Plugins
+let mapleader = ","
+nnoremap <silent> <leader>f :CtrlP<CR>
+nnoremap <silent> <leader>b :CtrlPBuffer<CR>
+
+
+
+"style theme
+set guifont=Source\ Code\ Pro\ for\ Powerline:h16
+colorscheme tango-dark
+
+function! BuildYCM(info)
+  " info is a dictionary with 3 fields
+  " - name:   name of the plugin
+  " - status: 'installed', 'updated', or 'unchanged'
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status == 'installed' || a:info.force
+    !./install.py
+  endif
+endfunction
 
 "plugins
 call plug#begin('~/.vim/plugged')
@@ -31,7 +53,9 @@ Plug 'mileszs/ack.vim' "ag integration
 Plug 'mbbill/undotree' "undo tree visualizer
 Plug 'tpope/vim-commentary' "uncommend with gcc
 Plug 'tpope/vim-vinegar' "improvements for netrw
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 call plug#end()
+
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'

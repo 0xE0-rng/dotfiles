@@ -5,7 +5,7 @@ mnemonic
 10G      jump to line 10
 1j        move 1 down
 w         next word
-e         end of word 
+e         end of word
 b         start of word
 
 
@@ -20,7 +20,7 @@ L          bottom of screen
 
 
 <C-O>     Enter command mode for one command
-<C-U>     remove left 
+<C-U>     remove left
 
 ma | set mark a
 'a | jmp to mark a
@@ -31,7 +31,7 @@ r          replace char
 
 O          insert line and insert
 cc,S       delete line
-A          append at end of line 
+A          append at end of line
 
 
 ### Explore
@@ -85,7 +85,7 @@ detatch from image | C-p C-q
 
 adb devices
 adb -s emulator-xxxx shell
-run-as <your-package-name> 
+run-as <your-package-name>
 cd data/data/<your-package-name>/databases/
 sqlite3 <your-db-name>.db
 
@@ -95,6 +95,6 @@ sqlite3 <your-db-name>.db
 .schema tablename
 .help
 
-
-
+## rails
+delete from schema_versions where version = 20181015105904;          fixes bad mirgration
 
