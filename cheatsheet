@@ -102,6 +102,6 @@ sqlite3 <your-db-name>.db
 .schema tablename
 .help
 
-
-
+## rails
+delete from schema_versions where version = 20181015105904;          fixes bad mirgration
 
