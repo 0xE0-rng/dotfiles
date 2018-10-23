@@ -7,6 +7,11 @@ std[i]n open
 [b]ind port
 mount [v]olume
 
+
+
+C+p C+q       Detach
+
+
 ## vim
 ### Navigation
 10G      jump to line 10
