@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+DEFAULT_USER=`whoami`
 export MAINFRAME_URL=http://192.168.90.101:3000
 export FAYE_URL=http://192.168.90.101:9292/faye
 export ACCESS_TOKEN=4a634b6e2350dd6f02613ac240033bc793d638af8540aabc03c53f4884adc454
