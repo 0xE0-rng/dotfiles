@@ -1,3 +1,7 @@
+https://github.com/vim-syntastic/syntastic
+https://github.com/Microsoft/language-server-protocol
+
+
 # Dotfiles
 My Linux dofile configureations, based on [link](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
 ## Initial setup
