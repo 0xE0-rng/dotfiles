@@ -1,4 +1,3 @@
-https://github.com/vim-syntastic/syntastic
 https://github.com/Microsoft/language-server-protocol
 
 
