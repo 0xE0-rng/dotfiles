@@ -15,8 +15,9 @@ echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $H
 creating the config alias
 
 ```
-echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.zshrc
 git clone --bare https://github.com/xerg0n/dotfiles.git $HOME/.cfg
+echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.zshrc
+config config --local status.showUntrackedFiles no 
 config checkout
 ```
 problems while checkout
