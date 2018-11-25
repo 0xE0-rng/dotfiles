@@ -71,11 +71,11 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/env-vars.sh
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-#export PATH="/home/luis/anaconda3/bin:$PATH"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -101,17 +101,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 DEFAULT_USER=`whoami`
-export MAINFRAME_URL=http://192.168.90.101:3000
-export FAYE_URL=http://192.168.90.101:9292/faye
-export ACCESS_TOKEN=4a634b6e2350dd6f02613ac240033bc793d638af8540aabc03c53f4884adc454
-export WEB_CALL_URL=ws://127.0.0.1:5065
-export WEB_CALL_USERNAME=1526972838:20
-export WEB_CALL_PASSWORD=NzhmYmJlMjEzOGI2MjQwNTAyOTQ5NjkwZDBmNTJkZDk0NmE4ZGU3NQ==
-
-export GOOGLE_CLIENT_ID=37415144641.apps.googleusercontent.com
-export GOOGLE_CLIENT_SECRET=Ml_zsr81XBy640yAZDvSHxjd
-export EWB_CALL_URL=ws://127.0.0.1:5065
-export EWB_CALL_USERNAME=1539263978:20
-export EWB_CALL_PASSWORD=OTM4NGRhYzQzZDRiZGFlMTg3MmIwYmRiYTUxN2U2NDczZjkxZjNmNw==
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 eval "$(jump shell)"
