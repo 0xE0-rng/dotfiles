@@ -16,9 +16,11 @@ creating the config alias
 
 ```
 git clone --bare https://github.com/xerg0n/dotfiles.git $HOME/.cfg
-echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.zshrc
-config config --local status.showUntrackedFiles no 
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME
 config checkout
+source ~/.zshrc
+config config --local status.showUntrackedFiles no 
+
 
 config reset 
 #careful
