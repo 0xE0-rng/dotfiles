@@ -71,7 +71,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.env-vars.sh
+ENV_VARS=$HOME/.env-vars.sh && test -f $ENV_VARS && source $ENV_VARS
 
 # User configuration
 
