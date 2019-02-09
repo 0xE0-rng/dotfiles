@@ -115,3 +115,6 @@ export EWB_CALL_USERNAME=1539263978:20
 export EWB_CALL_PASSWORD=OTM4NGRhYzQzZDRiZGFlMTg3MmIwYmRiYTUxN2U2NDczZjkxZjNmNw==
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 eval "$(jump shell)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

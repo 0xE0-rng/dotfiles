@@ -30,12 +30,29 @@ H          top of screen
 M          mid of screen
 L          bottom of screen
 
+C-Y       Scroll pane up
+C-E       Scroll pane down
+C-F scroll up page
+c-B scroll down page
+1
+c-u up
+c-d down
 
 <C-O>     Enter command mode for one command
 <C-U>     remove left
 
 ma | set mark a
 'a | jmp to mark a
+# Motions
+w - alphanum spaces
+W - all space enclosed
+
+
+i inner
+a all
+
+diw -  inside
+da(  - all including
 
 # Modification
 x          delete char
@@ -45,6 +62,10 @@ O          insert line and insert
 cc,S       delete line
 A          append at end of line
 
+
+q{buffer} record buffer
+@ play macro
+:normal @1 for selection
 
 ### Explore
 I - change dispaly mode
@@ -59,7 +80,6 @@ xrandr
 setxkbmap
 iwlist [interface] scan
 fdisk -l
-
 
 pactl set-card-profile 0 output:analog-stereo
 pactl set-sink-mute 0 1

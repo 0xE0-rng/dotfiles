@@ -2,17 +2,22 @@ set scrolloff=2
 set linebreak "dont break between words
 set autoread
 set list listchars=tab:\ \ ,trail:· " display tabs and trailing spaces
+
 "searching
 set hlsearch
+set ignorecase " ignore case
 set smartcase
+
 nnoremap <silent> \ :noh<return>
 "line numbers
 set nu
-"set relativenumber
+
 set mouse=a
 filetype plugin indent on
-set tabstop=2 shiftwidth=2 expandtab
 
+
+" tabbing
+set tabstop=2 shiftwidth=2 expandtab
 "retab on save
 if has("autocmd")
   au BufReadPost * if &modifiable | retab | endif
@@ -21,17 +26,11 @@ endif
 autocmd BufWritePre * :%s/\s\+$//e
 
 
-
-"Plugins
-let mapleader = ","
-nnoremap <silent> <leader>f :CtrlP<CR>
-nnoremap <silent> <leader>b :CtrlPBuffer<CR>
-
-
-
 "style theme
 set guifont=Source\ Code\ Pro\ for\ Powerline:h16
 colorscheme tango-dark
+
+
 
 function! BuildYCM(info)
   " info is a dictionary with 3 fields
@@ -54,7 +53,21 @@ Plug 'mbbill/undotree' "undo tree visualizer
 Plug 'tpope/vim-commentary' "uncommend with gcc
 Plug 'tpope/vim-vinegar' "improvements for netrw
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'junegunn/vim-easy-align'
 call plug#end()
+
+
+"Plugins bindings
+" CTRLP
+let mapleader = ","
+nnoremap <silent> <leader>f :CtrlP<CR>
+nnoremap <silent> <leader>b :CtrlPBuffer<CR>
+
+"easy align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 
 if executable('ag')
