@@ -54,6 +54,7 @@ Plug 'tpope/vim-commentary' "uncommend with gcc
 Plug 'tpope/vim-vinegar' "improvements for netrw
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'junegunn/vim-easy-align'
+Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 
