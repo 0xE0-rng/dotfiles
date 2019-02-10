@@ -1,3 +1,5 @@
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*.rawproto,*/build/intermediates/*
+
 set scrolloff=2
 set linebreak "dont break between words
 set autoread
@@ -32,16 +34,6 @@ colorscheme tango-dark
 
 
 
-function! BuildYCM(info)
-  " info is a dictionary with 3 fields
-  " - name:   name of the plugin
-  " - status: 'installed', 'updated', or 'unchanged'
-  " - force:  set on PlugInstall! or PlugUpdate!
-  if a:info.status == 'installed' || a:info.force
-    !./install.py
-  endif
-endfunction
-
 "plugins
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline' "statusline
@@ -52,9 +44,11 @@ Plug 'mileszs/ack.vim' "ag integration
 Plug 'mbbill/undotree' "undo tree visualizer
 Plug 'tpope/vim-commentary' "uncommend with gcc
 Plug 'tpope/vim-vinegar' "improvements for netrw
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 call plug#end()
 
 
@@ -70,6 +64,7 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+let g:deoplete#enable_at_startup = 1
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
