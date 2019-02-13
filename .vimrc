@@ -1,3 +1,6 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 " ignores for ctrl p and vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*.rawproto,*/build/intermediates/*
 
@@ -56,7 +59,13 @@ Plug 'tpope/vim-commentary' "uncommend with gcc
 Plug 'tpope/vim-vinegar' "improvements for netrw
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags' " ctags manager
-Plug 'Shougo/deoplete.nvim' "ycm alternative
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 call plug#end()
