@@ -26,7 +26,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 let mapleader = ","
 nnoremap <silent> <leader>f :CtrlP<CR>
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>
-
+let g:ctrlp_max_files=0
+"let g:ctrlp_max_depth=40
 
 
 "style theme
