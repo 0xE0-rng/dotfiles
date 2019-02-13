@@ -12,7 +12,6 @@ set history expansion
 # Output format
 set output-radix 0x10
 
-#layout asm
-#layout regs
-#focus cmd
-source ~/peda/peda.py
+layout asm
+layout regs
+focus cmd

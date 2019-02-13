@@ -71,7 +71,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.env-vars.sh
+ENV_VARS=$HOME/.env-vars.sh && test -f $ENV_VARS && source $ENV_VARS
 
 # User configuration
 
@@ -103,8 +103,12 @@ source $HOME/.env-vars.sh
 DEFAULT_USER=`whoami`
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 eval "$(jump shell)"
-export GIT_EDITOR=vim
 
+export GIT_EDITOR=vim
+export PATH="$PATH:$HOME/.rvm/bin"
 export NVM_DIR="$HOME/.nvm"
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
