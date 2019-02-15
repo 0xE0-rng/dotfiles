@@ -100,13 +100,24 @@ ENV_VARS=$HOME/.env-vars.sh && test -f $ENV_VARS && source $ENV_VARS
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 DEFAULT_USER=`whoami`
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 eval "$(jump shell)"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export GIT_EDITOR=vim
 export PATH="$PATH:$HOME/.rvm/bin"
 
 
 PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
 export PYTHONPATH
+
+export NVM_DIR="$HOME/.nvm"
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if ! type "$nvim" > /dev/null; then
+  alias vim=nvim
+fi
+
