@@ -106,3 +106,7 @@ eval "$(jump shell)"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+
+PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
+export PYTHONPATH
