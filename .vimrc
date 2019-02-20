@@ -1,6 +1,37 @@
 scriptencoding utf-8
 set encoding=utf-8
 
+" buffer switching imporved
+se nostartofline "remember line
+
+" Save current view settings on a per-window, per-buffer basis.
+function! AutoSaveWinView()
+    if !exists("w:SavedBufView")
+        let w:SavedBufView = {}
+    endif
+    let w:SavedBufView[bufnr("%")] = winsaveview()
+endfunction
+
+" Restore current view settings.
+function! AutoRestoreWinView()
+    let buf = bufnr("%")
+    if exists("w:SavedBufView") && has_key(w:SavedBufView, buf)
+        let v = winsaveview()
+        let atStartOfFile = v.lnum == 1 && v.col == 0
+        if atStartOfFile && !&diff
+            call winrestview(w:SavedBufView[buf])
+        endif
+        unlet w:SavedBufView[buf]
+    endif
+endfunction
+
+" When switching buffers, preserve window view.
+if v:version >= 700
+    autocmd BufLeave * call AutoSaveWinView()
+    autocmd BufEnter * call AutoRestoreWinView()
+  endif
+
+
 " ignores for ctrl p and vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*.rawproto,*/build/intermediates/*
 
@@ -9,12 +40,20 @@ set linebreak "dont break between words
 set autoread
 set list listchars=tab:\ \ ,trail:· " display tabs and trailing spaces
 
+set clipboard^=unnamedplus "everything to default clipborad
+
 "searching
 set hlsearch
 set ignorecase " ignore case
 set smartcase
 " remove highlight
 nnoremap <silent> \ :noh<return>
+
+" split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 "line numbers
 set nu
@@ -57,8 +96,9 @@ Plug 'mileszs/ack.vim' "ag integration
 Plug 'mbbill/undotree' "undo tree visualizer
 Plug 'tpope/vim-commentary' "uncommend with gcc
 Plug 'tpope/vim-vinegar' "improvements for netrw
-Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align' "align around chrs
 Plug 'ludovicchabant/vim-gutentags' " ctags manager
+Plug 'christoomey/vim-tmux-navigator' "tmux = vim splits
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -79,6 +119,7 @@ nnoremap <silent> <leader>f :CtrlP<CR>
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=0
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] "ignore files in .gitignore
 
 "easy align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
