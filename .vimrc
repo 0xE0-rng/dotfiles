@@ -33,7 +33,7 @@ if v:version >= 700
 
 
 " ignores for ctrl p and vim
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*.rawproto,*/build/intermediates/*
+set wildignore+=*/tmp/*,*.mp3*,*.ldb,*.so,*.swp,*.pdf,*.zip,*.cache,*/node_modules/*,*.rawproto,*/build/intermediates/*
 
 set scrolloff=2
 set linebreak "dont break between words
@@ -73,6 +73,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 "style theme
 set guifont=Source\ Code\ Pro\ for\ Powerline:h16
+set termguicolors
 colorscheme tango-dark
 
 
