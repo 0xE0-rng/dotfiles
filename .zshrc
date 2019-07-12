@@ -100,6 +100,7 @@ ENV_VARS=$HOME/.env-vars.sh && test -f $ENV_VARS && source $ENV_VARS
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export JAVA_HOME=/usr/lib/jvm/java-11-jdk/
 
 DEFAULT_USER=`whoami`
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -121,3 +122,8 @@ if ! type "$nvim" > /dev/null; then
   alias vim=nvim
 fi
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/luis/google-cloud-sdk/path.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/luis/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/completion.zsh.inc'; fi
