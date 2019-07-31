@@ -30,12 +30,12 @@ cpu_usage {
 }
 
 load {
-        format = " load %1min "
+        format = "load %1min"
         # max_threshold = 0.3
 }
 
 memory {
-        format = "%used | %available"
+        format = "-%used +%available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
