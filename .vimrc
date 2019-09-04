@@ -100,6 +100,7 @@ Plug 'tpope/vim-vinegar' "improvements for netrw
 Plug 'junegunn/vim-easy-align' "align around chrs
 Plug 'ludovicchabant/vim-gutentags' " ctags manager
 Plug 'christoomey/vim-tmux-navigator' "tmux = vim splits
+Plug 'https://github.com/tpope/vim-fugitive.git'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -109,6 +110,7 @@ else
 endif
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'w0rp/ale'
 call plug#end()
 
 
@@ -121,6 +123,9 @@ nnoremap <silent> <leader>b :CtrlPBuffer<CR>
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=0
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] "ignore files in .gitignore
+
+"syntastic
+let g:ale_linters = {'javascript': ['eslint']}
 
 "easy align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -139,4 +144,4 @@ endif
 "styling let g:airline_theme='ayu_mirage'
 let g:airline_powerline_fonts = 1
 syntax on
-
+set termguicolors
