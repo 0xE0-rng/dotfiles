@@ -52,7 +52,7 @@ bindsym $mod+F10 exec toggleMainScreen
 bindsym $mod+F12 exec /home/luis/.screenlayout/leftHdmi.sh
 bindsym $mod+F11 exec /home/luis/.screenlayout/noHdmi.sh
 # bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec gksu pcmanfm
+bindsym $mod+Shift+F2 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
