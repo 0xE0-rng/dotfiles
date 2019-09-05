@@ -108,6 +108,9 @@ call plug#end()
 
 "Plugins config
 "
+" airline
+let g:airline_extensions = []
+let g:airline_highlighting_cache = 1
 " CTRLP
 let mapleader = ","
 nnoremap <silent> <leader>f :CtrlP<CR>
