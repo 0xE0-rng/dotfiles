@@ -1,0 +1,13 @@
+#!/bin/sh
+
+i3status | while :
+do
+        read line
+        # musicpd
+        #time=$(mpc status | awk 'NR==2 { print $3 }')
+        # playing=| 🎶$(ncmpcpp --current-song="%a - %n - %t (${time})")
+        # wttr.in
+        weather=$(curl wttr.in/Copenhagen?format=%c%20%t)
+        # generate actual status bar content by prefixing the above
+        echo "$weather $playing | $line" || exit 1
+done
