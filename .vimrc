@@ -99,14 +99,19 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'deoplete-plugins/deoplete-jedi' "python deoplete
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'w0rp/ale'
 Plug 'ayu-theme/ayu-vim' " ayu color scheme
+" linter
+Plug 'nvie/vim-flake8' "python
 call plug#end()
 
 
 "Plugins config
+"vim-flake-8 python linter
+" autocmd BufWritePost *.py call flake8#Flake8()
 "
 " airline
 let g:airline_extensions = []
