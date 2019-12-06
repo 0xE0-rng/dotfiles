@@ -105,6 +105,7 @@ export JAVA_HOME=/usr/lib/jvm/java-11-jdk/
 DEFAULT_USER=`whoami`
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 eval "$(jump shell)"
+eval "$(rbenv init -)"
 
 export GIT_EDITOR=vim
 export PATH="$PATH:$HOME/.rvm/bin"
