@@ -108,7 +108,6 @@ eval "$(jump shell)"
 eval "$(rbenv init -)"
 
 export GIT_EDITOR=vim
-export PATH="$PATH:$HOME/.rvm/bin"
 
 
 PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
@@ -128,3 +127,5 @@ if [ -f '/home/luis/google-cloud-sdk/path.zsh.inc' ]; then . '/home/luis/google-
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/luis/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
