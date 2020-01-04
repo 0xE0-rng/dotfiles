@@ -144,6 +144,7 @@ endif
 " visuals
 set list listchars=tab:\ \ ,trail:· " display tabs and trailing spaces
 set nu "line numbers
+set cursorline
 "style theme
 set guifont=Source\ Code\ Pro\ for\ Powerline:h16
 set termguicolors
