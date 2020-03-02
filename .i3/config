@@ -27,7 +27,7 @@ font xft:Noto Sans 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -212,6 +212,7 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 # for_window [title="^Enpass$"] floating enable
+for_window [class="Enpass"] exec "/home/luis/bin/enpass-kill.sh"
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 

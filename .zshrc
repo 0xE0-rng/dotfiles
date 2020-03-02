@@ -106,7 +106,6 @@ export JAVA_HOME=/usr/lib/jvm/java-11-jdk/
 DEFAULT_USER=`whoami`
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 eval "$(jump shell)"
-eval "$(rbenv init -)"
 
 export GIT_EDITOR=vim
 
@@ -129,4 +128,4 @@ if [ -f '/home/luis/google-cloud-sdk/path.zsh.inc' ]; then . '/home/luis/google-
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/luis/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+eval "$(rbenv init - zsh)"
