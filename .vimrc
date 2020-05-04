@@ -4,6 +4,8 @@ set encoding=utf-8
 set mouse=a
 filetype plugin indent on
 
+" python3 for nvim
+let g:python3_host_prog = '/usr/bin/python'
 " ignores for ctrl p and vim
 set wildignore+=*/tmp/*,*.mp3*,*.ldb,*.so,*.swp,*.pdf,*.zip,*.cache,*/node_modules/*,*.rawproto,*/build/intermediates/*
 

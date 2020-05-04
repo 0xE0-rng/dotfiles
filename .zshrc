@@ -104,6 +104,7 @@ fi
 export JAVA_HOME=/usr/lib/jvm/java-11-jdk/
 
 DEFAULT_USER=`whoami`
+alias ssh="TERM=xterm ssh"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 eval "$(jump shell)"
 
