@@ -97,17 +97,8 @@ Plug 'mbbill/undotree' "undo tree visualizer
 Plug 'tpope/vim-commentary' "uncommend with gcc
 Plug 'tpope/vim-vinegar' "improvements for netrw
 Plug 'junegunn/vim-easy-align' "align around chrs
-Plug 'ludovicchabant/vim-gutentags' " ctags manager
 Plug 'christoomey/vim-tmux-navigator' "tmux = vim splits
 Plug 'https://github.com/tpope/vim-fugitive.git' "Git
-if has('nvim') "deoplete
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'deoplete-plugins/deoplete-jedi' "python deoplete
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'w0rp/ale'
