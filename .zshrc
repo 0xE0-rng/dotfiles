@@ -1,9 +1,26 @@
-# If you come from bash you might have to change your $PATH.
-alias headphones='./a2dp.py 04:52:C7:62:1C:8F'
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+# export JAVA_HOME=/usr/lib/jvm/java-11-jdk/
+case "$OSTYPE" in
+  darwin*)
+    export PATH=$HOME/Library/Python/3.8/bin:$PATH
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home
+    export PATH="/usr/local/sbin:$PATH"
+    export ANDROID_HOME=~/Library/Android/sdk
+    export PATH=$PATH:$ANDROID_HOME/tools
+    export PATH=$PATH:$ANDROID_HOME/tools/bin
+    export PATH=$PATH:$ANDROID_HOME/platform-tools
+    export PATH=$PATH:$ANDROID_HOME/build-tools/30.0.3/
+  ;;
+  linux*)
+    # ...
+  ;;
+  dragonfly*|freebsd*|netbsd*|openbsd*)
+    # ...
+  ;;
+esac
+#
 # Path to your oh-my-zsh installation.
-  export ZSH=~/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 precmd() { pwd > /tmp/whereami}
 export PROMPT_COMMAND="pwd > /tmp/whereami"
@@ -101,7 +118,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export JAVA_HOME=/usr/lib/jvm/java-11-jdk/
 
 DEFAULT_USER=`whoami`
 alias ssh="TERM=xterm ssh"
