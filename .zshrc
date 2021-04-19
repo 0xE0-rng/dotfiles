@@ -1,5 +1,6 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export JAVA_HOME=/usr/lib/jvm/java-11-jdk/
+source $HOME/.bash_aliases
 case "$OSTYPE" in
   darwin*)
     export PATH=$HOME/Library/Python/3.8/bin:$PATH
@@ -133,10 +134,6 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if ! type "$nvim" > /dev/null; then
-  alias vim=nvim
-fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/luis/google-cloud-sdk/path.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/path.zsh.inc'; fi
