@@ -1,16 +1,6 @@
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export JAVA_HOME=/usr/lib/jvm/java-11-jdk/
-source $HOME/.bash_aliases
 case "$OSTYPE" in
   darwin*)
-    export PATH=$HOME/Library/Python/3.8/bin:$PATH
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home
-    export PATH="/usr/local/sbin:$PATH"
-    export ANDROID_HOME=~/Library/Android/sdk
-    export PATH=$PATH:$ANDROID_HOME/tools
-    export PATH=$PATH:$ANDROID_HOME/tools/bin
-    export PATH=$PATH:$ANDROID_HOME/platform-tools
-    export PATH=$PATH:$ANDROID_HOME/build-tools/30.0.3/
+    # linux
   ;;
   linux*)
     # ...
@@ -84,13 +74,13 @@ plugins=(
   archlinux
   golang
   ng
+  asdf
   pip
   rust
   tmux
 )
 
 source $ZSH/oh-my-zsh.sh
-ENV_VARS=$HOME/.env-vars.sh && test -f $ENV_VARS && source $ENV_VARS
 
 # User configuration
 
@@ -127,8 +117,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 export GIT_EDITOR=vim
 
 
-PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
-export PYTHONPATH
 
 export NVM_DIR="$HOME/.nvm"
 
@@ -140,3 +128,4 @@ if [ -f '/home/luis/google-cloud-sdk/path.zsh.inc' ]; then . '/home/luis/google-
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/luis/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/completion.zsh.inc'; fi
+
