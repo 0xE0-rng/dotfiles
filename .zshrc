@@ -113,6 +113,7 @@ fi
 DEFAULT_USER=`whoami`
 alias ssh="TERM=xterm ssh"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias fix='vim +/HEAD `git diff --name-only | uniq`'
 
 export GIT_EDITOR=vim
 

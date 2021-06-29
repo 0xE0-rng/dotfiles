@@ -5,7 +5,7 @@ set mouse=a
 filetype plugin indent on
 
 " python3 for nvim
-let g:python3_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 " ignores for ctrl p and vim
 set wildignore+=*/tmp/*,*.mp3*,*.ldb,*.so,*.swp,*.pdf,*.zip,*.cache,*/node_modules/*,*.rawproto,*/build/intermediates/*
 
@@ -101,10 +101,9 @@ Plug 'christoomey/vim-tmux-navigator' "tmux = vim splits
 Plug 'https://github.com/tpope/vim-fugitive.git' "Git
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'w0rp/ale'
+Plug 'w0rp/ale' "linting engine
+Plug 'nvie/vim-flake8' "python linter
 Plug 'ayu-theme/ayu-vim' " ayu color scheme
-" linter
-Plug 'nvie/vim-flake8' "python
 call plug#end()
 
 
