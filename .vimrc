@@ -4,8 +4,6 @@ set encoding=utf-8
 set mouse=a
 filetype plugin indent on
 
-" python3 for nvim
-let g:python3_host_prog = '/usr/bin/python'
 " ignores for ctrl p and vim
 set wildignore+=*/tmp/*,*.mp3*,*.ldb,*.so,*.swp,*.pdf,*.zip,*.cache,*/node_modules/*,*.rawproto,*/build/intermediates/*
 
@@ -97,23 +95,14 @@ Plug 'mbbill/undotree' "undo tree visualizer
 Plug 'tpope/vim-commentary' "uncommend with gcc
 Plug 'tpope/vim-vinegar' "improvements for netrw
 Plug 'junegunn/vim-easy-align' "align around chrs
-Plug 'ludovicchabant/vim-gutentags' " ctags manager
+Plug 'ayu-theme/ayu-vim' " theme
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete using LSP
+Plug 'w0rp/ale' "linter based on LSP
 Plug 'christoomey/vim-tmux-navigator' "tmux = vim splits
 Plug 'https://github.com/tpope/vim-fugitive.git' "Git
-if has('nvim') "deoplete
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'deoplete-plugins/deoplete-jedi' "python deoplete
 Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'w0rp/ale'
-Plug 'ayu-theme/ayu-vim' " ayu color scheme
-" linter
-Plug 'nvie/vim-flake8' "python
+" " linter
+" Plug 'nvie/vim-flake8' "python
 call plug#end()
 
 

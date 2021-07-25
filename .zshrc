@@ -64,7 +64,7 @@ plugins=(
   git
   adb
   archlinux
-  go
+  golang
   ng
   pip
   rust
@@ -129,4 +129,6 @@ if [ -f '/home/luis/google-cloud-sdk/path.zsh.inc' ]; then . '/home/luis/google-
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/luis/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=$PATH:/opt/WebDriver/bin
+export PATH=$PATH:/home/kali/.local/bin
 eval "$(rbenv init - zsh)"
