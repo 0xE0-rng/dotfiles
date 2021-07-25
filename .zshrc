@@ -105,8 +105,7 @@ export JAVA_HOME=/usr/lib/jvm/java-11-jdk/
 
 DEFAULT_USER=`whoami`
 alias ssh="TERM=xterm ssh"
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-eval "$(jump shell)"
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 export GIT_EDITOR=vim
 
@@ -128,7 +127,8 @@ if [ -f '/home/luis/google-cloud-sdk/path.zsh.inc' ]; then . '/home/luis/google-
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/luis/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/completion.zsh.inc'; fi
-export PATH="$HOME/.rbenv/bin:$PATH"
+
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init - zsh)"
 export PATH=$PATH:/opt/WebDriver/bin
 export PATH=$PATH:/home/kali/.local/bin
-eval "$(rbenv init - zsh)"
