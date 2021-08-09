@@ -81,7 +81,18 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+# https://github.com/asdf-community/asdf-direnv
 eval "$(direnv hook zsh)"
+
+# to following enables the promt fror direnv python venv
+setopt PROMPT_SUBST
+
+show_virtual_env() {
+  if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
+    echo "($(basename $VIRTUAL_ENV))"
+  fi
+}
+PS1='$(show_virtual_env)'$PS1
 
 # User configuration
 

@@ -5,6 +5,7 @@ case "$OSTYPE" in
   darwin*)
     export PATH=$HOME/Library/Python/3.8/bin:$PATH
     . ~/.asdf/plugins/java/set-java-home.zsh
+    export PATH="$HOME/.asdf/shims":$PATH
     # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
     export PATH="/usr/local/sbin:$PATH"
     export ANDROID_HOME=~/Library/Android/sdk
