@@ -1,9 +1,5 @@
-# If you come from bash you might have to change your $PATH.
-alias headphones='./a2dp.py 04:52:C7:62:1C:8F'
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
-  export ZSH=~/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 precmd() { pwd > /tmp/whereami}
 export PROMPT_COMMAND="pwd > /tmp/whereami"
@@ -66,13 +62,25 @@ plugins=(
   archlinux
   golang
   ng
+  asdf
   pip
   rust
   tmux
 )
 
 source $ZSH/oh-my-zsh.sh
-ENV_VARS=$HOME/.env-vars.sh && test -f $ENV_VARS && source $ENV_VARS
+# https://github.com/asdf-community/asdf-direnv
+eval "$(direnv hook zsh)"
+
+# to following enables the promt fror direnv python venv
+setopt PROMPT_SUBST
+
+show_virtual_env() {
+  if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
+    echo "($(basename $VIRTUAL_ENV))"
+  fi
+}
+PS1='$(show_virtual_env)'$PS1
 
 # User configuration
 
@@ -101,34 +109,20 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export JAVA_HOME=/usr/lib/jvm/java-11-jdk/
 
 DEFAULT_USER=`whoami`
 alias ssh="TERM=xterm ssh"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias fix='vim +/HEAD `git diff --name-only | uniq`'
 
 export GIT_EDITOR=vim
 
 
-PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
-export PYTHONPATH
 
-export NVM_DIR="$HOME/.nvm"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if ! type "$nvim" > /dev/null; then
-  alias vim=nvim
-fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/luis/google-cloud-sdk/path.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
+# enables shell command completion for gcloud.
 if [ -f '/home/luis/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/completion.zsh.inc'; fi
 
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init - zsh)"
-export PATH=$PATH:/opt/WebDriver/bin
-export PATH=$PATH:/home/kali/.local/bin

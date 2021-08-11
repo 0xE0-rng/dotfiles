@@ -4,6 +4,8 @@ set encoding=utf-8
 set mouse=a
 filetype plugin indent on
 
+" python3 for nvim
+let g:python3_host_prog = '/usr/local/bin/python3'
 " ignores for ctrl p and vim
 set wildignore+=*/tmp/*,*.mp3*,*.ldb,*.so,*.swp,*.pdf,*.zip,*.cache,*/node_modules/*,*.rawproto,*/build/intermediates/*
 
@@ -76,14 +78,14 @@ set undoreload=10000
 
 nnoremap <F5> :UndotreeToggle<cr>
 
-"
-" Plugins
-"
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+
+ "Plugins
+
+ if empty(glob('~/.vim/autoload/plug.vim'))
+   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline' "statusline
@@ -100,11 +102,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete using LSP
 Plug 'w0rp/ale' "linter based on LSP
 Plug 'christoomey/vim-tmux-navigator' "tmux = vim splits
 Plug 'https://github.com/tpope/vim-fugitive.git' "Git
-Plug 'roxma/nvim-yarp'
-" " linter
-" Plug 'nvie/vim-flake8' "python
+Plug 'w0rp/ale' "linting engine
+Plug 'nvie/vim-flake8' "python linter
+Plug 'ayu-theme/ayu-vim' "ayu color scheme
+" Plug 'neoclide/coc.nvim', {'branch': 'release'} "coc autocomplete
 call plug#end()
 
+"" Plug 'roxma/nvim-yarp' "remove plugin framework for deoplete
+"" Plug 'roxma/vim-hug-neovim-rpc' "neovim - vim compatibility layer
 
 "Plugins config
 "vim-flake-8 python linter
@@ -130,9 +135,6 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-
 " Ack
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -149,7 +151,8 @@ set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
 
-"styling let g:airline_theme='ayu_mirage'
+"styling
+let g:airline_theme='ayu_mirage'
 let g:airline_powerline_fonts = 1
 syntax on
 set termguicolors
