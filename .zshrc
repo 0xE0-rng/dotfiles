@@ -70,7 +70,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 # https://github.com/asdf-community/asdf-direnv
-eval "$(direnv hook zsh)"
+[ -f direnv ] && eval "$(direnv hook zsh)"
 
 # to following enables the promt fror direnv python venv
 setopt PROMPT_SUBST
@@ -125,4 +125,8 @@ export GIT_EDITOR=vim
 
 # enables shell command completion for gcloud.
 if [ -f '/home/luis/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/completion.zsh.inc'; fi
+export local_ip=192.168.119.234
 
+# Created by `pipx` on 2021-09-16 23:05:56
+export PATH="$PATH:/home/kali/.local/bin"
+alias s_autorecon='sudo $(which autorecon)'
