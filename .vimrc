@@ -100,7 +100,6 @@ Plug 'junegunn/vim-easy-align' "align around chrs
 Plug 'ayu-theme/ayu-vim' " theme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete using LSP
 Plug 'w0rp/ale' "linter based on LSP
-Plug 'christoomey/vim-tmux-navigator' "tmux = vim splits
 Plug 'https://github.com/tpope/vim-fugitive.git' "Git
 Plug 'w0rp/ale' "linting engine
 Plug 'nvie/vim-flake8' "python linter

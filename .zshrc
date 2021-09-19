@@ -70,7 +70,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 # https://github.com/asdf-community/asdf-direnv
-[ -f direnv ] && eval "$(direnv hook zsh)"
+if type direnv &> /dev/null; else
+  eval "$(direnv hook zsh)"
+fi
 
 # to following enables the promt fror direnv python venv
 setopt PROMPT_SUBST
