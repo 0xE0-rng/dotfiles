@@ -102,7 +102,8 @@ Plug 'https://github.com/tpope/vim-fugitive.git' "Git
 Plug 'w0rp/ale' "linting engine
 Plug 'nvie/vim-flake8' "python linter
 Plug 'ayu-theme/ayu-vim' "ayu color scheme
-" Plug 'neoclide/coc.nvim', {'branch': 'release'} "coc autocomplete
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "coc autocomplete
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 
 "" Plug 'roxma/nvim-yarp' "remove plugin framework for deoplete
@@ -137,6 +138,13 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+" netrw settings
+let g:netrw_preview   = 1
+let g:netrw_liststyle = 3
+let g:netrw_winsize   = 30
+
+
+"
 " visuals
 set list listchars=tab:\ \ ,trail:· " display tabs and trailing spaces
 set nu "line numbers

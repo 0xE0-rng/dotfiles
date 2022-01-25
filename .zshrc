@@ -1,15 +1,3 @@
-case "$OSTYPE" in
-  darwin*)
-    # linux
-  ;;
-  linux*)
-    # ...
-  ;;
-  dragonfly*|freebsd*|netbsd*|openbsd*)
-    # ...
-  ;;
-esac
-#
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 

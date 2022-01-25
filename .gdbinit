@@ -1,17 +1,1 @@
-# Settings
-set disassembly-flavor intel
-set disable-randomization off
-set pagination off
-set follow-fork-mode child
-
-# History
-set history filename ~/.gdbhistory
-set history save
-set history expansion
-
-# Output format
-set output-radix 0x10
-
-layout asm
-layout regs
-focus cmd
+source ~/.gef-e95b072f5684857ffd3d3c95c3369f83cdba0dee.py
