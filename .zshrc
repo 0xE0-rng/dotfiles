@@ -70,7 +70,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 # https://github.com/asdf-community/asdf-direnv
-if type direnv &> /dev/null; else
+if [ -x "$(command -v direnv)" ]; then
   eval "$(direnv hook zsh)"
 fi
 

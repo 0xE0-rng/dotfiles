@@ -47,8 +47,8 @@ if v:version >= 700
 "searching
 set hlsearch
 set ignorecase " ignore case
-set smartcase
-" remove highlight
+set smartcase "dont ignore for capital letters
+" remove highlight on backslash
 nnoremap <silent> \ :noh<return>
 
 " split navigation
@@ -138,6 +138,11 @@ nmap ga <Plug>(EasyAlign)
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+"netrw
+let g:netrw_preview   = 1
+let g:netrw_liststyle = 3
+let g:netrw_winsize   = 30
 
 " visuals
 set list listchars=tab:\ \ ,trail:· " display tabs and trailing spaces
