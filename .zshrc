@@ -69,10 +69,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-# https://github.com/asdf-community/asdf-direnv
-if [ -x "$(command -v direnv)" ]; then
-  eval "$(direnv hook zsh)"
-fi
 
 # to following enables the promt fror direnv python venv
 setopt PROMPT_SUBST
@@ -132,3 +128,8 @@ export local_ip=192.168.119.234
 # Created by `pipx` on 2021-09-16 23:05:56
 export PATH="$PATH:/home/kali/.local/bin"
 alias s_autorecon='sudo $(which autorecon)'
+
+# https://github.com/asdf-community/asdf-direnv
+if [ -x "$(command -v direnv)" ]; then
+  eval "$(direnv hook zsh)"
+fi
