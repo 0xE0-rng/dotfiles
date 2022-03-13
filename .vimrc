@@ -164,3 +164,4 @@ set termguicolors
 " syntax
 syntax on
 au BufRead,BufNewFile *.smali set filetype=smali
+au BufRead,BufNewFile *_nmap.txt set filetype=nmap
