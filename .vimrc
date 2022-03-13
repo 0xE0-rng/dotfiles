@@ -158,5 +158,9 @@ colorscheme ayu
 "styling
 let g:airline_theme='ayu_mirage'
 let g:airline_powerline_fonts = 1
-syntax on
 set termguicolors
+
+
+" syntax
+syntax on
+au BufRead,BufNewFile *.smali set filetype=smali
