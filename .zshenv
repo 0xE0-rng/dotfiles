@@ -8,15 +8,15 @@ case "$OSTYPE" in
 
     export PATH=$HOME/Library/Python/3.8/bin:$PATH
     . ~/.asdf/plugins/java/set-java-home.zsh
-    export PATH="$HOME/.asdf/shims":$PATH
     # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
-    export PATH="/usr/local/sbin:$PATH"
+    export PATH="$PATH:/usr/local/sbin"
 
     export PATH=$PATH:$ANDROID_HOME/emulator
     export PATH=$PATH:$ANDROID_HOME/tools
     export PATH=$PATH:$ANDROID_HOME/tools/bin
     export PATH=$PATH:$ANDROID_HOME/platform-tools
     export PATH=$PATH:$ANDROID_HOME/build-tools/30.0.3/
+    export PATH="$HOME/.asdf/shims":$PATH
   ;;
   linux*)
   # export PATH=$HOME/bin:/usr/local/bin:$PATH

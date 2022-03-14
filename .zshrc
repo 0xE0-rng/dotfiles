@@ -56,6 +56,10 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+source $ZSH/oh-my-zsh.sh
+
+export ASDF_DIR='/usr/local/opt/asdf/libexec'
+
 plugins=(
   git
   adb
@@ -68,7 +72,6 @@ plugins=(
   tmux
 )
 
-source $ZSH/oh-my-zsh.sh
 # https://github.com/asdf-community/asdf-direnv
 eval "$(direnv hook zsh)"
 
@@ -129,4 +132,6 @@ if [ -f '/home/luis/google-cloud-sdk/path.zsh.inc' ]; then . '/home/luis/google-
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/luis/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/completion.zsh.inc'; fi
+
+source ~/.lloyds_env
 
