@@ -47,8 +47,8 @@ if v:version >= 700
 "searching
 set hlsearch
 set ignorecase " ignore case
-set smartcase
-" remove highlight
+set smartcase "dont ignore for capital letters
+" remove highlight on backslash
 nnoremap <silent> \ :noh<return>
 
 " split navigation
@@ -97,7 +97,9 @@ Plug 'mbbill/undotree' "undo tree visualizer
 Plug 'tpope/vim-commentary' "uncommend with gcc
 Plug 'tpope/vim-vinegar' "improvements for netrw
 Plug 'junegunn/vim-easy-align' "align around chrs
-Plug 'christoomey/vim-tmux-navigator' "tmux = vim splits
+Plug 'ayu-theme/ayu-vim' " theme
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete using LSP
+Plug 'w0rp/ale' "linter based on LSP
 Plug 'https://github.com/tpope/vim-fugitive.git' "Git
 Plug 'w0rp/ale' "linting engine
 Plug 'nvie/vim-flake8' "python linter
@@ -143,7 +145,6 @@ let g:netrw_preview   = 1
 let g:netrw_liststyle = 3
 let g:netrw_winsize   = 30
 
-
 "
 " visuals
 set list listchars=tab:\ \ ,trail:· " display tabs and trailing spaces
@@ -159,5 +160,10 @@ colorscheme ayu
 "styling
 let g:airline_theme='ayu_mirage'
 let g:airline_powerline_fonts = 1
-syntax on
 set termguicolors
+
+
+" syntax
+syntax on
+au BufRead,BufNewFile *.smali set filetype=smali
+au BufRead,BufNewFile *_nmap.txt set filetype=nmap
