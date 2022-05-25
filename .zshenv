@@ -29,3 +29,4 @@ case "$OSTYPE" in
     # ...
   ;;
 esac
+. "$HOME/.cargo/env"
