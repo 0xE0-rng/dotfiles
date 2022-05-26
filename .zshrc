@@ -118,6 +118,7 @@ fi
 
 DEFAULT_USER=`whoami`
 source ~/.bash_aliases
+source ~/.zshenv
 
 export GIT_EDITOR=vim
 
@@ -129,5 +130,3 @@ export GIT_EDITOR=vim
 
 # enables shell command completion for gcloud.
 if [ -f '/home/luis/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/completion.zsh.inc'; fi
-export local_ip=192.168.119.234
-
