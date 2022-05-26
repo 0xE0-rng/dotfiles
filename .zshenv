@@ -18,7 +18,8 @@ case "$OSTYPE" in
     # export PATH="$HOME/.rbenv/bin:$PATH"
     # eval "$(rbenv init - zsh)"
     export PATH=$PATH:/opt/WebDriver/bin
-    PATH=$PATH:/home/kali/.local/bin
+    export PATH=$PATH:$HOME/.cargo/bin/
+    export PATH=$PATH:$HOME/.local/bin
     # updates PATH for the Google Cloud SDK.
     if [ -f '/home/luis/google-cloud-sdk/path.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/path.zsh.inc'; fi
     # export PATH=$HOME/bin:/usr/local/bin:$PATH
