@@ -13,10 +13,11 @@ case "$OSTYPE" in
     export PATH=$PATH:$ANDROID_HOME/platform-tools
     export PATH=$PATH:$ANDROID_HOME/build-tools/30.0.3/
     export PATH="$HOME/.asdf/shims":$PATH
-  ;;
+    ;;
   linux*)
     # export PATH="$HOME/.rbenv/bin:$PATH"
     # eval "$(rbenv init - zsh)"
+    export ANDROID_HOME=$HOME/android/sdk
     export PATH=$PATH:/opt/WebDriver/bin
     PATH=$PATH:/home/kali/.local/bin
     # updates PATH for the Google Cloud SDK.
@@ -29,4 +30,15 @@ case "$OSTYPE" in
     # ...
   ;;
 esac
+
+export NDK_HOME="${HOME}/android/android-ndk-r22b"
+# export TOOLCHAIN="${NDK_HOME}/toolchains/llvm/prebuilt/linux-x86_64"
+# export CC="${TOOLCHAIN}/bin/aarch64-linux-android29-clang"
+# export LD="${TOOLCHAIN}/bin/aarch64-linux-android-ld"
+
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 . "$HOME/.cargo/env"

@@ -73,7 +73,10 @@ plugins=(
 )
 
 # https://github.com/asdf-community/asdf-direnv
-eval "$(direnv hook zsh)"
+if [ -x "$(command -v direnv)" ]; then
+  eval "$(direnv hook zsh)"
+fi
+
 
 # to following enables the promt fror direnv python venv
 setopt PROMPT_SUBST
@@ -128,4 +131,3 @@ export GIT_EDITOR=vim
 if [ -f '/home/luis/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/completion.zsh.inc'; fi
 export local_ip=192.168.119.234
 
-source ~/.lloyds_env
