@@ -26,20 +26,20 @@ case "$OSTYPE" in
     # export PATH=$HOME/bin:/usr/local/bin:$PATH
     # export JAVA_HOME=/usr/lib/jvm/java-11-jdk/
     # ...
+    export NDK_HOME="${HOME}/android/android-ndk-r22b"
+    # export TOOLCHAIN="${NDK_HOME}/toolchains/llvm/prebuilt/linux-x86_64"
+    # export CC="${TOOLCHAIN}/bin/aarch64-linux-android29-clang"
+    # export LD="${TOOLCHAIN}/bin/aarch64-linux-android-ld"
+
+    export PATH=$PATH:$ANDROID_HOME/emulator
+    export PATH=$PATH:$ANDROID_HOME/tools
+    export PATH=$PATH:$ANDROID_HOME/tools/bin
+    export PATH=$PATH:$ANDROID_HOME/platform-tools
+  . "$HOME/.cargo/env"
   ;;
   dragonfly*|freebsd*|netbsd*|openbsd*)
     # ...
   ;;
 esac
 
-export NDK_HOME="${HOME}/android/android-ndk-r22b"
-# export TOOLCHAIN="${NDK_HOME}/toolchains/llvm/prebuilt/linux-x86_64"
-# export CC="${TOOLCHAIN}/bin/aarch64-linux-android29-clang"
-# export LD="${TOOLCHAIN}/bin/aarch64-linux-android-ld"
 
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-. "$HOME/.cargo/env"
