@@ -3,7 +3,8 @@ case "$OSTYPE" in
     export ANDROID_HOME=~/Library/Android/sdk
     export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
     export PATH=$HOME/Library/Python/3.8/bin:$PATH
-    . ~/.asdf/plugins/java/set-java-home.zsh
+    # . ~/.asdf/plugins/java/set-java-home.zsh
+
     # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
     export PATH="$PATH:/usr/local/sbin"
 
