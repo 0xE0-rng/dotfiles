@@ -13,4 +13,7 @@ config checkout
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+
+
+sudo apt install neovim
 ```

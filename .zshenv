@@ -36,7 +36,9 @@ case "$OSTYPE" in
     export PATH=$PATH:$ANDROID_HOME/tools
     export PATH=$PATH:$ANDROID_HOME/tools/bin
     export PATH=$PATH:$ANDROID_HOME/platform-tools
-  . "$HOME/.cargo/env"
+
+    if [ -f '$HOME/.cargo/env' ]; then . "$HOME/.cargo/env"; fi
+
   ;;
   dragonfly*|freebsd*|netbsd*|openbsd*)
     # ...
