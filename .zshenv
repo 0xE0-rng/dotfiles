@@ -35,7 +35,9 @@ case "$OSTYPE" in
     export PATH=$PATH:$ANDROID_HOME/emulator
     export PATH=$PATH:$ANDROID_HOME/tools
     export PATH=$PATH:$ANDROID_HOME/tools/bin
+
     export PATH=$PATH:$ANDROID_HOME/platform-tools
+    export PATH=$PATH:$HOME/go/bin/
 
     if [ -f '$HOME/.cargo/env' ]; then . "$HOME/.cargo/env"; fi
 
