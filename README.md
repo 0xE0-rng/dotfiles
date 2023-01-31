@@ -15,5 +15,5 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 
 
-sudo apt install neovim
+sudo apt update && sudo apt upgrade && sudo apt install nodejs neovim nmap python3-pip
 ```
