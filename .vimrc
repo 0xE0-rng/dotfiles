@@ -97,13 +97,12 @@ Plug 'mbbill/undotree' "undo tree visualizer
 Plug 'tpope/vim-commentary' "uncommend with gcc
 Plug 'tpope/vim-vinegar' "improvements for netrw
 Plug 'junegunn/vim-easy-align' "align around chrs
-Plug 'ayu-theme/ayu-vim' " theme
+Plug 'Luxed/ayu-vim' " theme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete using LSP
 Plug 'w0rp/ale' "linter based on LSP
 Plug 'https://github.com/tpope/vim-fugitive.git' "Git
 Plug 'w0rp/ale' "linting engine
 Plug 'nvie/vim-flake8' "python linter
-Plug 'ayu-theme/ayu-vim' "ayu color scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "coc autocomplete
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
@@ -153,6 +152,7 @@ set cursorline
 "style theme
 set guifont=Source\ Code\ Pro\ for\ Powerline:h16
 set termguicolors
+
 " colorscheme tango-dark
 let ayucolor="mirage"
 colorscheme ayu

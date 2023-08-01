@@ -1,8 +1,12 @@
 case "$OSTYPE" in
   darwin*)
     export ANDROID_HOME=~/Library/Android/sdk
+    export ANDROID_SDK=$ANDROID_HOME
+    export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
+
     export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
     export PATH=$HOME/Library/Python/3.8/bin:$PATH
+    export PATH=$HOME/Library/Python/3.9/bin:$PATH
     # . ~/.asdf/plugins/java/set-java-home.zsh
 
     # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
@@ -12,8 +16,19 @@ case "$OSTYPE" in
     export PATH=$PATH:$ANDROID_HOME/tools
     export PATH=$PATH:$ANDROID_HOME/tools/bin
     export PATH=$PATH:$ANDROID_HOME/platform-tools
-    export PATH=$PATH:$ANDROID_HOME/build-tools/30.0.3/
+    export PATH=$PATH:$ANDROID_HOME/build-tools/30.0.2/
+
     export PATH="$HOME/.asdf/shims":$PATH
+    export PATH="/usr/local/opt/binutils/bin:$PATH"
+    export PATH="$HOME/bin:$PATH"
+    export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
+
+
+    source ~/.zsh_lds
+
+    source /usr/local/opt/chruby/share/chruby/chruby.sh
+    source /usr/local/opt/chruby/share/chruby/auto.sh
+    chruby ruby-3.1.3
     ;;
   linux*)
     # export PATH="$HOME/.rbenv/bin:$PATH"

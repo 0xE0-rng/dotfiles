@@ -119,6 +119,7 @@ fi
 DEFAULT_USER=`whoami`
 source ~/.bash_aliases
 source ~/.zshenv
+source ~/.zsh_lds
 
 export GIT_EDITOR=vim
 

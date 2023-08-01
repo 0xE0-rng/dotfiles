@@ -1,0 +1,23 @@
+uninstall_pkg () {
+  for app in $(adb shell pm list packages | egrep $1 | sed -e "s/^package://"); do adb uninstall $app; done
+}
+
+repeatstall () {
+  adb install $1
+  while [ $? -ne 0 ]; do adb install $1 ; done
+}
+
+dodona_read () {
+  adb logcat -c; adb logcat | python3 /Users/luisw/lds/Tools/dodona-release-testing-oracle/main.py -n $1
+}
+adb_cinput () {
+        adb shell input keyevent $(printf 'KEYCODE_DPAD_LEFT %.0s' {1..50})
+        adb shell input text $1
+        adb shell input keyevent $(printf 'KEYCODE_FORWARD_DEL %.0s' {1..30})
+}
+adb_tab () {
+  adb shell input keyevent $(printf 'KEYCODE_TAB %.0s' {1..$1})
+}
+adb_enter () {
+  adb shell input keyevent $(printf 'KEYCODE_ENTER')
+}
