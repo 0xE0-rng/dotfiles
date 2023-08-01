@@ -6,6 +6,7 @@ filetype plugin indent on
 
 " python3 for nvim
 let g:python3_host_prog = '/usr/local/bin/python3'
+autocmd Filetype python nnoremap <buffer> <F6> :w<CR>:vert ter python3 "%"<CR>
 " ignores for ctrl p and vim
 set wildignore+=*/tmp/*,*.mp3*,*.ldb,*.so,*.swp,*.pdf,*.zip,*.cache,*/node_modules/*,*.rawproto,*/build/intermediates/*
 
@@ -112,7 +113,7 @@ call plug#end()
 
 "Plugins config
 "vim-flake-8 python linter
-" autocmd BufWritePost *.py call flake8#Flake8()
+autocmd BufWritePost *.py call flake8#Flake8()
 "
 " airline
 let g:airline_extensions = []
