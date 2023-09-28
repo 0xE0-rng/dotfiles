@@ -37,6 +37,9 @@ case "$OSTYPE" in
     export PATH=$PATH:/opt/WebDriver/bin
     export PATH=$PATH:$HOME/.cargo/bin/
     export PATH=$PATH:$HOME/.local/bin
+    export GEM_HOME="$HOME/gems"
+    export PATH="$HOME/gems/bin:$PATH"
+    export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
     # updates PATH for the Google Cloud SDK.
     if [ -f '/home/luis/google-cloud-sdk/path.zsh.inc' ]; then . '/home/luis/google-cloud-sdk/path.zsh.inc'; fi
     # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -50,6 +53,7 @@ case "$OSTYPE" in
     export PATH=$PATH:$ANDROID_HOME/emulator
     export PATH=$PATH:$ANDROID_HOME/tools
     export PATH=$PATH:$ANDROID_HOME/tools/bin
+
 
     export PATH=$PATH:$ANDROID_HOME/platform-tools
     export PATH=$PATH:$HOME/go/bin/
